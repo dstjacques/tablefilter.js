@@ -14,7 +14,7 @@ Include `tablefilter.js` in your page:
 
 Next create a tablefilter object that will modify your table(s) on the fly:
 
-```javascript
+```html
 <script type="text/javascript">
    instanceName = new tablefilter("instanceName", [list of classes], caseInsensitive]
 </script>
@@ -22,7 +22,7 @@ Next create a tablefilter object that will modify your table(s) on the fly:
 
 For example this tablefilter object will enable case insensitive filtering on tables having the class "someClass":
 
-```javascript
+```html
 <script type="text/javascript">
    myFilter = new tablefilter("myFilter", ["someClass"], true);
 </script>
