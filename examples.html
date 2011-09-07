@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <script type="text/javascript" src="tablefilter.js"></script>
+   <script type="text/javascript">
+      // Using case sensitive filtering for tables with "sensitive" or "table2" class
+      example1Filter = new tablefilter("example1Filter", ["example1"], false);
+
+      // Using case insensitive filtering for tables with "example2" class
+      example2Filter = new tablefilter("example2Filter", ["example2"], true);
+   </script>
+</head>
+
+<body>
+
+   <table title="Todo list" class="example1" border="1">
+      <tr>
+         <td>Description</td>
+      </tr>
+      <tr>
+         <td>Walk dog</td>
+      </tr>
+      <tr>
+         <td>Wash dog</td>
+      </tr>
+      <tr>
+         <td>Mow Lawn</td>
+      </tr>
+      <tr>
+         <td>Wash Car</td>
+      </tr>
+   </table>
+
+   <hr />
+
+   <table title="Tasks" class="example2" border="1">
+      <tr>
+         <td>Task</td>
+         <td>Status</td>
+         <td>Due date</td>
+         <td>Assigned to</td>
+      </tr>
+      <tr>
+         <td>Development</td>
+         <td>Planning</td>
+         <td>July 21, 2010</td>
+         <td>A</td>
+      </tr>
+      <tr>
+         <td>Development</td>
+         <td>Coding</td>
+         <td>August 30, 2010</td>
+         <td>A</td>
+      </tr>
+      <tr>
+         <td>Testing</td>
+         <td>Documentation</td>
+         <td>February 22, 2011</td>
+         <td>B</td>
+      </tr>
+      <tr>
+         <td>Development</td>
+         <td>Coding</td>
+         <td>July 22, 2011</td>
+         <td>B</td>
+      </tr>
+      <tr>
+         <td>Testing</td>
+         <td>Planning</td>
+         <td>August 7, 2011</td>
+         <td>C</td>
+      </tr>
+   </table>
+
+</body>
+</html>

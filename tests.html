@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <script type="text/javascript" src="tablefilter.js"></script>
+   <script type="text/javascript">
+      // Test case sensitive filtering
+      caseSensitiveFilter = new tablefilter("caseSensitiveFilter", ["sensitive"], false);
+
+      // Test case insensitive filtering
+      caseInsensitiveFilter = new tablefilter("caseInsensitiveFilter", ["insensitive"], true);
+
+      // Test using multiple classes
+      multipleClassFilter = new tablefilter("multipleClassFilter", ["class1", "class2"], false);
+
+      // Test using td and th cells
+      columnTypesFilter = new tablefilter("columnTypesFilter", ["columnTypes"], true);
+
+   </script>
+</head>
+
+<body>
+
+   <table title="Todo list" class="sensitive" border="1">
+      <tr>
+         <td>Case Sensitive Test</td>
+      </tr>
+      <tr>
+         <td>test</td>
+      </tr>
+      <tr>
+         <td>TEST</td>
+      </tr>
+   </table>
+
+   <hr />
+
+   <table title="Tasks" class="insensitive" border="1">
+      <tr>
+         <td>Case Insensitive Test</td>
+      </tr>
+      <tr>
+         <td>test</td>
+      </tr>
+      <tr>
+         <td>TEST</td>
+      </tr>
+   </table>
+
+   <hr />
+
+   <table title="Tasks" class="class1" border="1">
+      <tr>
+         <td>Multiple Class Test (class1)</td>
+      </tr>
+      <tr>
+         <td>test</td>
+      </tr>
+      <tr>
+         <td>TEST</td>
+      </tr>
+   </table>
+
+   <br />
+
+   <table title="Tasks" class="class2" border="1">
+      <tr>
+         <td>Multiple Class Test (class2)</td>
+      </tr>
+      <tr>
+         <td>test</td>
+      </tr>
+      <tr>
+         <td>TEST</td>
+      </tr>
+   </table>
+
+   <hr />
+
+   <table title="Tasks" class="columnTypes" border="1">
+      <tr>
+         <td>Column Types Test (check both td and th work)</td>
+      </tr>
+      <tr>
+         <th>th1</th>
+      </tr>
+      <tr>
+         <td>td1</td>
+      </tr>
+      <tr>
+         <th>th2</th>
+      </tr>
+      <tr>
+         <td>td2</td>
+      </tr>
+      <tr>
+         <td>td3</td>
+      </tr>
+   </table>
+
+</body>
+</html>
