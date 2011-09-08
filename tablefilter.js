@@ -130,4 +130,17 @@ function tablefilter(objectName, classNames, caseInsensitive)
          rows[i].style.display = visible;      
       }
    }
+
+   /**
+    * Filter all tables based on the filters entered
+    */
+   this.filterAll = function()
+   {
+      var tables = this.getTables();
+
+      for(var i in tables)
+      {
+         this.filter(tables[i]);
+      }
+   }
 }
