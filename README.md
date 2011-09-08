@@ -8,6 +8,10 @@ It supports JavaScript regular expressions in filtering.
 
 
 
+There are no dependencies, it can be used with styled tables, and it should not interfere with other JavaScript.
+
+
+
 ## Usage
 
 
@@ -39,6 +43,10 @@ new tablefilter(instanceName, classList, caseInsensitive, refreshDelay);
 
 
 
+## Examples
+
+
+
 For example this tablefilter object will enable case insensitive filtering on tables having the class "someClass" and will refilter every 2000ms:
 
 
@@ -52,10 +60,6 @@ For example this tablefilter object will enable case insensitive filtering on ta
 </script>
 
 ```
-
-
-
-Tablefilter has no dependencies, can be used with styled tables and should not interfere with other JavaScript.
 
 
 
