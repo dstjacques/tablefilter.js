@@ -40,7 +40,7 @@ Next create a tablefilter object that will modify your table(s) on the fly:
 
 
 
-For example this tablefilter object will enable case insensitive filtering on tables having the class "someClass":
+For example this tablefilter object will enable case insensitive filtering on tables having the class "someClass" and will refilter every 2000ms in case data is dynamically changing:
 
 
 
@@ -48,7 +48,7 @@ For example this tablefilter object will enable case insensitive filtering on ta
 
 <script type="text/javascript">
 
-   myFilter = new tablefilter("myFilter", ["someClass"], true);
+   myFilter = new tablefilter("myFilter", ["someClass"], true, 2000);
 
 </script>
 
