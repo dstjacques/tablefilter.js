@@ -24,17 +24,15 @@ Include `tablefilter.js` in your page:
 
 
 
-Next create a tablefilter object that will modify your table(s) on the fly:
+Next create a tablefilter object with desired options:
 
+instanceName: should be a string indicating the variable you are assigning this new object to
+classList: the library will treat any tables having one or more of the classes in this array
+caseInsensitive: true if filtering should be caseInsensitive, false otherwise
 
+```javascript
 
-```html
-
-<script type="text/javascript">
-
-   instanceName = new tablefilter("instanceName", [list of classes], caseInsensitive);
-
-</script>
+new tablefilter(instanceName, classList, caseInsensitive);
 
 ```
 
