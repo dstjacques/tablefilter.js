@@ -62,9 +62,6 @@ function tablefilter(objectName, classNames, caseInsensitive, filterRefreshTime)
          {
             headers[j].innerHTML = "<input class='filterInput' type='text' onkeyup='" + this.OBJECTNAME + ".filter(this.parentNode.parentNode.parentNode)' /><br />" + headers[j].innerHTML;
          }
-
-         // Filter table in case something populates filter textboxes
-         this.filter(lists[i]);
       }
    }
 
