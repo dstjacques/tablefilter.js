@@ -7,8 +7,9 @@
  * @param objectName name of the variable you are assigning your new instance to
  * @param classNames the library will act on any table with at least one of these class names
  * @param caseInsensitive filtering comparisons will be done in a case insensitive manner if true, case sensitive if false
+ * @param filterRefreshTime tables will be refiltered automatically on this time interval if greater than 0 (in milliseconds)
  */
-function tablefilter(objectName, classNames, caseInsensitive)
+function tablefilter(objectName, classNames, caseInsensitive, filterRefreshTime)
 {
    // Name of the object used to interact with the library
    this.OBJECTNAME = objectName;
@@ -38,6 +39,11 @@ function tablefilter(objectName, classNames, caseInsensitive)
    {
       // Microsoft
       window.attachEvent('onload', _this.init);
+   }
+
+   if(filterRefreshTime > 0)
+   {
+      window.setInterval(function() { _this.filterAll(); }, filterRefreshTime);
    }
 
    /**

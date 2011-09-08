@@ -17,6 +17,11 @@
       // Test using td and th cells
       columnTypesFilter = new tablefilter("columnTypesFilter", ["columnTypes"], true);
 
+      // Keep modifying table data to test auto refresh
+      window.setInterval(function() { document.getElementById("autoRefreshData").innerHTML = new Date().getTime(); }, 5000);
+      // Test using automatic filter refresh
+      autoRefreshFilter = new tablefilter("autoRefreshFilter", ["autoRefresh"], true, 2000);
+
    </script>
 </head>
 
@@ -96,6 +101,15 @@
       </tr>
       <tr>
          <td>td3</td>
+      </tr>
+   </table>
+
+   <table title="Tasks" class="autoRefresh" border="1">
+      <tr>
+         <td>Auto Refresh Test (for tables with non-static data)</td>
+      </tr>
+      <tr>
+         <td id="autoRefreshData">Some data</td>
       </tr>
    </table>
 
