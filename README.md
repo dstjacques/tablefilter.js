@@ -28,7 +28,7 @@ Next create a tablefilter object with desired options:
 
 * instanceName: should be a string indicating the variable you are assigning this new object to
 * classList: the library will treat any tables having one or more of the classes in this array
-* caseInsensitive: true if filtering should be caseInsensitive, false otherwise
+* caseInsensitive: true if filtering should be case insensitive, false otherwise
 * refreshDelay: a number greater than zero for table filters to be reapplied every refreshDelay milliseconds (useful when tables have dynamic data)
 
 ```javascript
