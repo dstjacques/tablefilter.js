@@ -57,12 +57,10 @@ function tablefilter(objectName, classNames, caseInsensitive, filterRefreshTime)
       {
          // Find table headers and add input boxes for filtering
          var headers = lists[i].rows[0].cells;
-         
-         var column = 0;
+
          for(var j in headers)
          {
             headers[j].innerHTML = "<input class='filterInput' type='text' onkeyup='" + this.OBJECTNAME + ".filter(this.parentNode.parentNode.parentNode)' /><br />" + headers[j].innerHTML;
-            column++;
          }
 
          // Filter table in case something populates filter textboxes
