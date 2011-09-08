@@ -53,6 +53,7 @@ For example this tablefilter object will enable case insensitive filtering on ta
 
 ```html
 
+<script type="text/javascript" src="tablefilter.js"></script>
 <script type="text/javascript">
 
    myFilter = new tablefilter("myFilter", ["someClass"], true, 2000);
