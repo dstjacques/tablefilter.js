@@ -29,16 +29,17 @@ Next create a tablefilter object with desired options:
 instanceName: should be a string indicating the variable you are assigning this new object to
 classList: the library will treat any tables having one or more of the classes in this array
 caseInsensitive: true if filtering should be caseInsensitive, false otherwise
+refreshDelay: a number greater than zero for table filters to be reapplied every refreshDelay milliseconds (useful when tables have dynamic data)
 
 ```javascript
 
-new tablefilter(instanceName, classList, caseInsensitive);
+new tablefilter(instanceName, classList, caseInsensitive, refreshDelay);
 
 ```
 
 
 
-For example this tablefilter object will enable case insensitive filtering on tables having the class "someClass" and will refilter every 2000ms in case data is dynamically changing:
+For example this tablefilter object will enable case insensitive filtering on tables having the class "someClass" and will refilter every 2000ms:
 
 
 
