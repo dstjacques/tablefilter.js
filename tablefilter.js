@@ -41,6 +41,7 @@ function tablefilter(objectName, classNames, caseInsensitive, filterRefreshTime)
       window.attachEvent('onload', _this.init);
    }
 
+   // Add a continuous filter refresh for all of this object's tables if requested
    if(filterRefreshTime > 0)
    {
       window.setInterval(function() { _this.filterAll(); }, filterRefreshTime);
