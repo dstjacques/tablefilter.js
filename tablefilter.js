@@ -38,7 +38,7 @@ function tablefilter(objectName, classNames, caseInsensitive, refreshDelay)
    else if (window.attachEvent)
    {
       // Microsoft
-      window.attachEvent('onload', _this.init);
+      window.attachEvent('onload', function() { _this.init(); });
    }
 
    // Add a continuous filter refresh for all of this object's tables if requested
@@ -61,7 +61,7 @@ function tablefilter(objectName, classNames, caseInsensitive, refreshDelay)
 
          for(var j in headers)
          {
-            headers[j].innerHTML = "<input class='filterInput' type='text' onkeyup='" + this.OBJECTNAME + ".filter(this.parentNode.parentNode.parentNode)' /><br />" + headers[j].innerHTML;
+            headers[j].innerHTML = "<input type='text' onkeyup='" + this.OBJECTNAME + ".filter(this.parentNode.parentNode.parentNode)' /><br />" + headers[j].innerHTML;
          }
       }
    }
@@ -102,7 +102,7 @@ function tablefilter(objectName, classNames, caseInsensitive, refreshDelay)
       var rows = table.rows;
 
       // Get all the filters from the input elements
-      var filter = table.rows[0].getElementsByClassName('filterInput');
+      var filter = table.rows[0].getElementsByTagName('input');
 
       // Apply the filter to all rows except row[0] since it is the headers
       for(var i = 1; i < rows.length; i++)
@@ -146,3 +146,4 @@ function tablefilter(objectName, classNames, caseInsensitive, refreshDelay)
       }
    }
 }
+
