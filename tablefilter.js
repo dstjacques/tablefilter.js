@@ -57,11 +57,31 @@ function tablefilter(objectName, classNames, caseInsensitive, refreshDelay)
       for(var i in lists)
       {
          // Find table headers and add input boxes for filtering
-         var headers = lists[i].rows[0].cells;
-
+         var table = lists[i];
+         var headers = table.rows[0].cells;
+         var maxsizes = new Array(headers.length);
+         for(var i = 0; i < maxsizes.length; i++)
+         {
+            maxsizes[i] = 5;
+         }
+         
+         var rows = table.rows;
+         for(var i = 0; i < rows.length; i++)
+         {
+            var cells = table.rows[i].cells;
+            for(var j = 0; j < cells.length; j++)
+            {
+               var content = cells[j].innerHTML.replace(/<(?:.|\n)*?>/gm, '');
+               if(content.length > maxsizes[j])
+               {
+                  maxsizes[j] = content.length;
+               }
+            }
+         }
+         
          for(var j in headers)
          {
-            headers[j].innerHTML = "<input type='text' onkeyup='" + this.OBJECTNAME + ".filter(this.parentNode.parentNode.parentNode)' /><br />" + headers[j].innerHTML;
+            headers[j].innerHTML = "<input type='text' size='" + maxsizes[j] + "px' onkeyup='" + this.OBJECTNAME + ".filter(this.parentNode.parentNode.parentNode)' /><br />" + headers[j].innerHTML;
          }
       }
    }
