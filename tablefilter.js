@@ -81,13 +81,18 @@ function tablefilter(objectName, classNames, caseInsensitive, refreshDelay)
 
       for(var i = 0; i < tableElements.length; i++)
       {
-         // Look for the current table's class in the list of classes specified
+         // Look through the current table's classes in the list of classes specified
          // when the library was initialized
-         var matchClass = new RegExp("(^|[ ,])" + tableElements[i].className + "([, ]|$)");                  
-         if(matchClass.test(this.CLASSNAMES) == true)
-         {     
-            // Add any table to the return list if its class is found in the list
-            tables.push(tableElements[i]);
+         var classes = tableElements[i].className.split(" ");
+         for(var j = 0; j < classes.length; j++)
+         {
+            var matchClass = new RegExp("(^|[ ,])" + classes[j] + "([, ]|$)");                  
+            if(matchClass.test(this.CLASSNAMES) == true)
+            {     
+               // Add any table to the return list if its class is found in the list
+               tables.push(tableElements[i]);
+               break;
+            }
          }
       }
       return tables;
